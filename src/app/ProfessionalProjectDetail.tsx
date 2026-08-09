@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUp, ArrowDown, Home, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useData } from "./data";
 import { useLang } from "./i18n";
+import { assetPath } from "./assetPath";
 
 const FONT = "'Montserrat', sans-serif";
 
@@ -60,7 +61,7 @@ export function ProfessionalProjectDetail() {
     <>
       {/* Hero banner */}
       <div style={{ position: "relative", height: "65vh", overflow: "hidden" }}>
-        <img src={proj.image} alt={proj.title} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.4 }} />
+        <img src={assetPath(proj.image)} alt={proj.title} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.4 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 30%, #1c1c1c 100%)" }} />
       </div>
 
@@ -168,7 +169,7 @@ export function ProfessionalProjectDetail() {
                   style={{ display: "block", overflow: "hidden", background: "#242424", borderRadius: "0.75rem", cursor: "zoom-in" }}
                 >
                   <img
-                    src={src}
+                    src={assetPath(src)}
                     alt={`${proj.title} screenshot ${i + 1}`}
                     className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                     style={{ height: "12rem", opacity: 0.85 }}
@@ -208,7 +209,7 @@ export function ProfessionalProjectDetail() {
             <X size={16} />
           </button>
           <img
-            src={lightbox}
+            src={assetPath(lightbox)}
             alt="Screenshot"
             onClick={e => e.stopPropagation()}
             style={{
