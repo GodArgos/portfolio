@@ -7,6 +7,7 @@ import {
 import { useData } from "./data";
 import { useLang } from "./i18n";
 import { Reveal } from "./Reveal";
+import { assetPath } from "./AssetPath.ts";
 
 const FONT = "'Montserrat', sans-serif";
 
@@ -400,14 +401,14 @@ function ProjectCard({ project, onClick }: { project: (typeof PROJECTS)[0]; onCl
       >
         <div style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden" }}>
           <img
-            src={project.image}
+            src={assetPath(project.image)}
             alt={project.title}
             style={{ width: "100%", height: "100%", objectFit: "cover", transform: hovered ? "scale(1.06)" : "scale(1)", transition: "transform 0.55s ease" }}
           />
           {project.video && (
             <video
               ref={videoRef}
-              src={project.video}
+              src={assetPath(project.video)}
               loop muted playsInline
               style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: hovered ? 1 : 0, transition: "opacity 0.5s" }}
             />
@@ -598,7 +599,7 @@ function ProfCard({
     >
       <div style={{ ...(isMobile ? { height: "160px" } : { aspectRatio: "16/9" }), position: "relative", overflow: "hidden" }}>
         <img
-          src={proj.image}
+          src={assetPath(proj.image)}
           alt={proj.title}
           style={{
             width: "100%", height: "100%", objectFit: "cover",

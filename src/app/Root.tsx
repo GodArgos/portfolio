@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Github, Linkedin, FileDown, Globe, Menu, X } from "lucide-react";
 import { useLang } from "./i18n";
 import { TopoBackground } from "./TopoBackground";
+import { assetPath } from "./AssetPath.ts";
 
 function ItchioIcon({ size = 16 }: { size?: number }) {
   return (
@@ -79,7 +80,7 @@ export function Root() {
                 {lang === "en" ? "ES" : "EN"}
               </button>
               <a 
-                href={lang === "en" ? "/resume-en.pdf" : "/resume-es.pdf"}
+                href={assetPath(lang === "en" ? "/resume-en.pdf" : "/resume-es.pdf")}
                 download={lang === "en" ? "Joaquin_Incio_Resume.pdf" : "Joaquin_Incio_CV.pdf"}
                 className="inline-flex items-center gap-2 transition-opacity hover:opacity-70"
                 style={{ color: "#ffffff", background: "#135090", fontSize: "0.9rem", fontFamily: FONT,
@@ -149,7 +150,7 @@ export function Root() {
               ))}
               {/* Resume */}
               <a
-                href={lang === "en" ? "/resume-en.pdf" : "/resume-es.pdf"}
+                href={assetPath(lang === "en" ? "/resume-en.pdf" : "/resume-es.pdf")}
                 download={lang === "en" ? "Joaquin_Incio_Resume.pdf" : "Joaquin_Incio_CV.pdf"}
                 className="flex items-center gap-3 hover:bg-white/5 transition-colors"
                 style={{
