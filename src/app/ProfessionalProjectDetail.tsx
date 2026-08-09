@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowUp, ArrowDown, Home, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useData } from "./data";
 import { useLang } from "./i18n";
-import { assetPath } from "./assetPath";
+import { assetPath } from "./AssetPath.ts";
 
 const FONT = "'Montserrat', sans-serif";
 
