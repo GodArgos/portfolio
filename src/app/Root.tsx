@@ -141,7 +141,7 @@ export function Root() {
                   style={{
                         color: "#e2e2e2", padding: "0.8rem 1.1rem",
                         fontSize: "0.82rem", fontFamily: FONT,
-                        borderBottom: i < socials.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "1px solid rgba(255,255,255,0.06)",
+                        borderBottom: "1px solid rgba(255,255,255,0.06)",
                       }}
                 >
                   {icon}
